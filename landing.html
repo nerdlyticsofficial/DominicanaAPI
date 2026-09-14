@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Description" content="API abierta y gratuita para consultar cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales de la República Dominicana.">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c; min-height: 18.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #0b1d53}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53; min-height: 13.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 18.0px}
+    p.p6 {margin: 0.0px 0.0px 16.0px 0.0px; font: 13.2px 'Helvetica Neue'; color: #b6c5e2; -webkit-text-stroke: #b6c5e2}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53; background-color: #ffffff}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.2px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.09)}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #6b7fae; -webkit-text-stroke: #6b7fae}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #fc4051; -webkit-text-stroke: #fc4051}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px '.AppleSystemUIFontMonospaced'; color: #d4dff5; -webkit-text-stroke: #d4dff5}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.6px '.AppleSystemUIFontMonospaced'; color: #5cd089; -webkit-text-stroke: #5cd089}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px '.AppleSystemUIFontMonospaced'; color: #a9badd; -webkit-text-stroke: #a9badd; min-height: 11.0px}
+    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.2px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 30.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    p.p22 {margin: 0.0px 0.0px 8.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    p.p23 {margin: 0.0px 0.0px 10.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #0b1d53; -webkit-text-stroke: #0b1d53}
+    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 23.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    p.p27 {margin: 0.0px 0.0px 16.0px 0.0px; font: 10.1px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; font: 31.2px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #abbad8; -webkit-text-stroke: #abbad8}
+    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53}
+    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 31.2px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.6px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3; min-height: 12.0px}
+    p.p40 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.6px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
+    p.p41 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
+    li.li19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.2px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
+    li.li31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.3px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
+    li.li36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.3px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; background-color: #081333}
+    span.s3 {font-kerning: none; background-color: #050e23}
+    span.s4 {font-kerning: none; background-color: #f0f4f9}
+    span.s5 {font: 8.6px 'Helvetica Neue'; color: #c60621; background-color: #f0f4f9; -webkit-text-stroke: 0px #000000}
+    span.s6 {font: 8.6px 'Helvetica Neue'; font-kerning: none; color: #c60621; background-color: #f0f4f9; -webkit-text-stroke: 0px #c60621}
+    span.s7 {font: 8.6px 'Helvetica Neue'; font-kerning: none; color: #c60621; -webkit-text-stroke: 0px #c60621}
+    span.s8 {font: 10.4px '.AppleSystemUIFontMonospaced'; font-kerning: none; color: #0b1d53; background-color: #f0f4f9; -webkit-text-stroke: 0px #0b1d53}
+    span.s9 {font: 10.4px '.AppleSystemUIFontMonospaced'; font-kerning: none; color: #0b1d53; -webkit-text-stroke: 0px #0b1d53}
+    span.s10 {font-kerning: none; background-color: #ffffff}
+    span.s11 {font-kerning: none; background-color: #0b1d53}
+    span.s12 {background-color: #0b1d53; -webkit-text-stroke: 0px #000000}
+    span.s13 {-webkit-text-stroke: 0px #000000}
+    span.s14 {font: 9.8px 'Helvetica Neue'; font-kerning: none}
+    span.s15 {font: 10.6px 'Helvetica Neue'; font-kerning: none; color: #7d94c3; -webkit-text-stroke: 0px #7d94c3}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">API KEY</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p4"><span class="s1"></span><br></p>
+<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 41.6px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">LOS DATOS DE REPÚBLICA DOMINICANA, EN JSON</span></h1>
+<p class="p6"><span class="s2">Cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales. Una sola API, sin scraping y sin portales que se caen.</span></p>
+<p class="p7"><span class="s1">OBTENER API KEY</span></p>
+<p class="p8"><span class="s2">VER ENDPOINTS</span></p>
+<p class="p9"><span class="s2">6</span></p>
+<p class="p10"><span class="s2">endpoints públicos</span></p>
+<p class="p9"><span class="s2">Gratis</span></p>
+<p class="p10"><span class="s2">hasta 10.000 consultas al mes</span></p>
+<p class="p9"><span class="s2">0</span></p>
+<p class="p10"><span class="s2">tarjetas de crédito</span></p>
+<p class="p11"><span class="s1">cedula</span></p>
+<p class="p12"><span class="s3">rnc</span></p>
+<p class="p12"><span class="s3">provincias</span></p>
+<p class="p12"><span class="s3">feriados</span></p>
+<p class="p12"><span class="s3">tasa</span></p>
+<p class="p12"><span class="s3">postal</span></p>
+<p class="p13"><span class="s3">GET</span></p>
+<p class="p14"><span class="s3">https://api.dominicanaapi.com/v1/cedula/001-0000000-0</span></p>
+<p class="p15"><span class="s3">200 · 48 ms</span></p>
+<p class="p16"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s4">ENDPOINTS</span></h2>
+<p class="p18"><span class="s4">Todo responde JSON sobre HTTPS. Sin SDK: si tu lenguaje sabe hacer una petición, ya puedes usarla.</span></p>
+<ul class="ul1">
+  <li class="li19"><span class="s5"></span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/cedula/{cedula}</span><span class="s9"><br>
+</span><span class="s4">Valida una cédula y devuelve el nombre registrado.</span><span class="s1"><br>
+</span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/rnc/{rnc}</span><span class="s9"><br>
+</span><span class="s4">Consulta un RNC en el registro de la DGII.</span><span class="s1"><br>
+</span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/provincias</span><span class="s9"><br>
+</span><span class="s4">Las 32 provincias con su código, región y municipio cabecera.</span><span class="s1"><br>
+</span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/feriados/2026</span><span class="s9"><br>
+</span><span class="s4">Feriados nacionales del año, con la fecha ya trasladada.</span><span class="s1"><br>
+</span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/tasa-cambio</span><span class="s9"><br>
+</span><span class="s4">Tasa de compra y venta del Banco Central, del día.</span><span class="s1"><br>
+</span><span class="s6">GET</span><span class="s7"><br>
+</span><span class="s8">/v1/codigo-postal/{codigo}</span><span class="s9"><br>
+</span><span class="s4">Resuelve un código postal a municipio y provincia.</span></li>
+</ul>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">DE DÓNDE SALEN LOS DATOS</span></h2>
+<p class="p18"><span class="s1">Cada endpoint tiene una fuente oficial detrás. Consolidamos, normalizamos y servimos: tú no tienes que pelear con seis portales distintos.</span></p>
+<p class="p20"><span class="s10">JCE</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">JCE</span></h3>
+<p class="p22"><span class="s10">Junta Central Electoral</span></p>
+<p class="p23"><span class="s10">Cédulas y estado del registro civil</span></p>
+<p class="p24"><span class="s4">/v1/cedula</span></p>
+<p class="p25"><span class="s10">DGII</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">DGII</span></h3>
+<p class="p22"><span class="s10">Dirección General de Impuestos Internos</span></p>
+<p class="p23"><span class="s10">Registro Nacional del Contribuyente</span></p>
+<p class="p24"><span class="s4">/v1/rnc</span></p>
+<p class="p25"><span class="s10">BCRD</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">BCRD</span></h3>
+<p class="p22"><span class="s10">Banco Central de la República Dominicana</span></p>
+<p class="p23"><span class="s10">Tasa de cambio de referencia</span></p>
+<p class="p24"><span class="s4">/v1/tasa-cambio</span></p>
+<p class="p26"><span class="s10">INPOSDOM</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">INPOSDOM</span></h3>
+<p class="p22"><span class="s10">Instituto Postal Dominicano</span></p>
+<p class="p23"><span class="s10">Códigos postales por municipio</span></p>
+<p class="p24"><span class="s4">/v1/codigo-postal</span></p>
+<p class="p20"><span class="s10">ONE</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">ONE</span></h3>
+<p class="p22"><span class="s10">Oficina Nacional de Estadística</span></p>
+<p class="p23"><span class="s10">División territorial y provincias</span></p>
+<p class="p24"><span class="s4">/v1/provincias</span></p>
+<p class="p20"><span class="s10">MT</span></p>
+<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">MT</span></h3>
+<p class="p22"><span class="s10">Ministerio de Trabajo</span></p>
+<p class="p23"><span class="s10">Calendario de feriados nacionales</span></p>
+<p class="p24"><span class="s4">/v1/feriados</span></p>
+<p class="p27"><span class="s1">Dominicana API no está afiliada, patrocinada ni respaldada por estas instituciones. Los nombres se muestran únicamente para identificar el origen de cada dato.</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">PLANES</span></h2>
+<p class="p18"><span class="s1">El plan gratuito cubre proyectos personales, pruebas y la mayoría de integraciones pequeñas. Si necesitas más volumen o garantías, lo conversamos.</span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s11">GRATIS</span></h3>
+<p class="p29"><span class="s11">RD$0</span></p>
+<p class="p30"><span class="s11">Para siempre, sin tarjeta.</span></p>
+<ul class="ul1">
+  <li class="li31"><span class="s12"></span><span class="s11">10.000 consultas al mes</span></li>
+  <li class="li31"><span class="s12"></span><span class="s11">Los 6 endpoints públicos</span></li>
+  <li class="li31"><span class="s12"></span><span class="s11">Límite de 30 peticiones por minuto</span></li>
+  <li class="li31"><span class="s12"></span><span class="s11">Soporte por la comunidad</span></li>
+</ul>
+<p class="p32"><span class="s10">CREAR MI API KEY</span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">A MEDIDA</span></h3>
+<p class="p34"><span class="s1">Hablemos</span></p>
+<p class="p35"><span class="s1">Para producción y volumen alto.</span></p>
+<ul class="ul1">
+  <li class="li36"><span class="s13"></span><span class="s1">Volumen y límites que definas</span></li>
+  <li class="li36"><span class="s13"></span><span class="s1">Acuerdo de nivel de servicio</span></li>
+  <li class="li36"><span class="s13"></span><span class="s1">Endpoints y campos adicionales</span></li>
+  <li class="li36"><span class="s13"></span><span class="s1">Soporte directo y canal privado</span></li>
+</ul>
+<p class="p8"><span class="s11"><a href="mailto:hola@dominicanaapi.com">ESCRIBIRNOS<span class="s14"></span></a></span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s4">TÉRMINOS DE USO</span></h2>
+<p class="p18"><span class="s4">Resumen en lenguaje claro. El documento completo está en la documentación.</span></p>
+<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">DATOS PÚBLICOS</span></h3>
+<p class="p19"><span class="s4">La API expone información que ya es de acceso público. No almacenamos consultas asociadas a tu API key más allá de lo necesario para contar el uso.</span></p>
+<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">USO RESPONSABLE</span></h3>
+<p class="p19"><span class="s4">Está prohibido usar la API para perfilar personas, revender los datos o reconstruir bases completas. Una API key que lo haga se revoca sin aviso.</span></p>
+<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">SIN GARANTÍA</span></h3>
+<p class="p19"><span class="s4">Los datos vienen de fuentes oficiales y pueden estar desactualizados. El plan gratuito se ofrece tal cual; para garantías existe el plan a medida.</span></p>
+<p class="p38"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">PRODUCTO</span></h3>
+<p class="p40"><span class="s2">Endpoints</span></p>
+<p class="p40"><span class="s2">Fuentes de datos</span></p>
+<p class="p40"><span class="s2">Planes</span></p>
+<p class="p40"><span class="s2">Estado del servicio</span></p>
+<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">DESARROLLADORES</span></h3>
+<p class="p40"><span class="s2">Documentación</span></p>
+<p class="p40"><span class="s2">Referencia de errores</span></p>
+<p class="p40"><span class="s2">GitHub</span></p>
+<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">CONTACTO</span></h3>
+<p class="p40"><span class="s2"><a href="mailto:hola@dominicanaapi.com">hola@dominicanaapi.com<span class="s15"></span></a></span></p>
+<p class="p40"><span class="s2">Términos de uso</span></p>
+<p class="p41"><span class="s2">Santo Domingo, República Dominicana</span></p>
+<p class="p41"><span class="s2">© 2026 Dominicana API</span></p>
+</body>
+</html>
