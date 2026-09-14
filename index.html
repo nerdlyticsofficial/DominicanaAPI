@@ -1,190 +1,532 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="API abierta y gratuita para consultar cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales de la República Dominicana.">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c; min-height: 18.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #0b1d53}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53; min-height: 13.0px}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 18.0px}
-    p.p6 {margin: 0.0px 0.0px 16.0px 0.0px; font: 13.2px 'Helvetica Neue'; color: #b6c5e2; -webkit-text-stroke: #b6c5e2}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53; background-color: #ffffff}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.2px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.09)}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #6b7fae; -webkit-text-stroke: #6b7fae}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #fc4051; -webkit-text-stroke: #fc4051}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px '.AppleSystemUIFontMonospaced'; color: #d4dff5; -webkit-text-stroke: #d4dff5}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.6px '.AppleSystemUIFontMonospaced'; color: #5cd089; -webkit-text-stroke: #5cd089}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px '.AppleSystemUIFontMonospaced'; color: #a9badd; -webkit-text-stroke: #a9badd; min-height: 11.0px}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.2px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 30.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    p.p22 {margin: 0.0px 0.0px 8.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    p.p23 {margin: 0.0px 0.0px 10.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.1px '.AppleSystemUIFontMonospaced'; color: #0b1d53; -webkit-text-stroke: #0b1d53}
-    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 23.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    p.p27 {margin: 0.0px 0.0px 16.0px 0.0px; font: 10.1px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; font: 31.2px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #abbad8; -webkit-text-stroke: #abbad8}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53}
-    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 31.2px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.6px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3; min-height: 12.0px}
-    p.p40 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.6px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
-    p.p41 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.8px 'Helvetica Neue'; color: #7d94c3; -webkit-text-stroke: #7d94c3}
-    li.li19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.2px 'Helvetica Neue'; color: #495466; -webkit-text-stroke: #495466}
-    li.li31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.3px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    li.li36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.3px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; background-color: #081333}
-    span.s3 {font-kerning: none; background-color: #050e23}
-    span.s4 {font-kerning: none; background-color: #f0f4f9}
-    span.s5 {font: 8.6px 'Helvetica Neue'; color: #c60621; background-color: #f0f4f9; -webkit-text-stroke: 0px #000000}
-    span.s6 {font: 8.6px 'Helvetica Neue'; font-kerning: none; color: #c60621; background-color: #f0f4f9; -webkit-text-stroke: 0px #c60621}
-    span.s7 {font: 8.6px 'Helvetica Neue'; font-kerning: none; color: #c60621; -webkit-text-stroke: 0px #c60621}
-    span.s8 {font: 10.4px '.AppleSystemUIFontMonospaced'; font-kerning: none; color: #0b1d53; background-color: #f0f4f9; -webkit-text-stroke: 0px #0b1d53}
-    span.s9 {font: 10.4px '.AppleSystemUIFontMonospaced'; font-kerning: none; color: #0b1d53; -webkit-text-stroke: 0px #0b1d53}
-    span.s10 {font-kerning: none; background-color: #ffffff}
-    span.s11 {font-kerning: none; background-color: #0b1d53}
-    span.s12 {background-color: #0b1d53; -webkit-text-stroke: 0px #000000}
-    span.s13 {-webkit-text-stroke: 0px #000000}
-    span.s14 {font: 9.8px 'Helvetica Neue'; font-kerning: none}
-    span.s15 {font: 10.6px 'Helvetica Neue'; font-kerning: none; color: #7d94c3; -webkit-text-stroke: 0px #7d94c3}
-    ul.ul1 {list-style-type: disc}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominicana API — datos públicos dominicanos en JSON</title>
+<meta name="description" content="API abierta y gratuita para consultar cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales de la República Dominicana.">
+<style>
+@font-face{font-family:Oxanium;font-weight:400;font-style:normal;font-display:swap;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:Oxanium;font-weight:700;font-style:normal;font-display:swap;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:Oxanium;font-weight:800;font-style:normal;font-display:swap;src:url(data:font/woff2;base64,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) format('woff2')}
+:root{
+  --navy:#0A2A66; --deep:#061A42; --abyss:#04122F;
+  --red:#D3202B; --red-soft:#FF5A63;
+  --ink:#0E1726; --slate:#5B6779; --line:#DDE3EC; --mist:#F3F6FA;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);overflow-x:hidden;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;font-family:Oxanium,system-ui,sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.04em;line-height:1.1}
+h1{font-size:clamp(2.1rem,5.2vw,3.5rem)}
+h2{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+h3{font-size:1.05rem;letter-spacing:.05em}
+p{margin:0 0 16px;max-width:62ch}
+a{color:inherit}
+svg{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--red-soft);outline-offset:3px;border-radius:4px}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:70px}
+nav .brand{width:186px;flex:0 0 auto}
+nav .links{display:flex;gap:22px;margin-left:auto;font-size:.93rem}
+nav .links a{text-decoration:none;color:var(--slate)}
+nav .links a:hover{color:var(--navy)}
+.navtoggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;
+  background:none;border:1px solid var(--line);border-radius:10px;color:var(--navy);
+  cursor:pointer;flex:0 0 auto}
+.navtoggle svg{width:22px;height:22px;fill:none}
+.navcta .sm{display:none}
+.tabs::-webkit-scrollbar{height:0}
+.btn{display:inline-block;font-family:Oxanium,sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;
+  padding:11px 20px;border-radius:9px;text-decoration:none;border:1.5px solid transparent;
+  cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-solid{background:var(--navy);color:#fff}
+.btn-solid:hover{background:var(--deep)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:var(--mist)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--deep);color:#fff;overflow:hidden;
+  padding:96px 0 104px}
+.hero .map{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  height:86%;width:auto;aspect-ratio:186/127;max-width:94vw;pointer-events:none}
+.hero .map .land{fill:#fff;opacity:.085}
+.hero .map .trace{fill:none;stroke:var(--red-soft);stroke-width:1.9;opacity:.55;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.6s .4s ease-out forwards}
+.hero .map .node{fill:var(--red-soft);opacity:0;animation:pop .6s ease-out forwards}
+.hero .map .halo{fill:none;stroke:var(--red-soft);stroke-width:1.4;opacity:0;
+  transform-box:fill-box;transform-origin:center;
+  animation:halo 2.8s ease-out infinite}
+.hero .map .packet{fill:#fff;opacity:.9}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@keyframes halo{
+  0%{opacity:.55;transform:scale(.4)}
+  70%{opacity:0;transform:scale(2.6)}
+  100%{opacity:0;transform:scale(2.6)}}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);
+  gap:56px;align-items:center}
+.hero p.lead{color:#C3D0E8;font-size:1.1rem;max-width:46ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .meta{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;
+  font-size:.86rem;color:#8FA6CE}
+.hero .meta b{display:block;font-family:Oxanium,sans-serif;font-weight:800;
+  font-size:1.35rem;color:#fff;letter-spacing:.03em}
+
+/* ---------- consola ---------- */
+.console{background:var(--abyss);border:1px solid rgba(255,255,255,.13);
+  border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(2,8,24,.45)}
+.console .tabs{display:flex;gap:2px;padding:8px 8px 0;overflow-x:auto;
+  border-bottom:1px solid rgba(255,255,255,.1)}
+.tab{font-family:var(--mono);font-size:.76rem;color:#7E93BC;background:none;
+  border:0;padding:9px 13px;border-radius:8px 8px 0 0;cursor:pointer;white-space:nowrap}
+.tab:hover{color:#fff}
+.tab.on{color:#fff;background:rgba(255,255,255,.09)}
+.req{display:flex;align-items:center;gap:10px;padding:15px 18px;
+  border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--mono);font-size:.8rem}
+.req .verb{color:var(--red-soft);font-weight:700}
+.req .url{color:#DCE6F7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.req .status{margin-left:auto;color:#6BD69B;font-size:.72rem;white-space:nowrap}
+.res{margin:0;padding:18px;font-family:var(--mono);font-size:.79rem;line-height:1.65;
+  color:#B7C7E4;height:262px;overflow:auto}
+.res .k{color:#7FB2FF}
+.res .s{color:#8FE3B4}
+.res .n{color:#FFC46B}
+.res .b{color:var(--red-soft)}
+.desc-line{padding:0 18px 16px;color:#8FA6CE;font-size:.84rem;
+  min-height:54px;display:flex;align-items:flex-start}
+
+/* ---------- secciones ---------- */
+section{padding:78px 0}
+.sec-head{max-width:60ch;margin-bottom:34px}
+.sec-head p{color:var(--slate);margin-bottom:0}
+
+#endpoints{background:var(--mist);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+ul.eps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+ul.eps li{display:grid;grid-template-columns:56px minmax(0,290px) 1fr;gap:18px;
+  align-items:baseline;padding:17px 4px;border-bottom:1px solid var(--line)}
+ul.eps .verb{font-family:var(--mono);font-size:.72rem;color:var(--red);
+  font-weight:700;letter-spacing:.04em}
+ul.eps .path{font-family:var(--mono);font-size:.87rem;color:var(--navy);
+  overflow-wrap:anywhere}
+ul.eps .desc{color:var(--slate);font-size:.93rem}
+
+/* ---------- instituciones ---------- */
+.insts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.inst{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--line);
+  border-radius:16px;padding:22px;background:#fff}
+.inst .sigla{flex:0 0 52px;width:52px}
+.inst h3{font-size:.86rem;letter-spacing:.07em;color:var(--navy);margin-bottom:4px}
+.inst .nom{margin:0 0 8px;font-size:.9rem;line-height:1.4}
+.inst .dato{margin:0 0 10px;font-size:.86rem;color:var(--slate)}
+.inst code{font-family:var(--mono);font-size:.76rem;color:var(--navy);
+  background:var(--mist);padding:3px 8px;border-radius:6px}
+.disclaimer{margin-top:26px;font-size:.84rem;color:var(--slate);max-width:74ch}
+
+/* ---------- planes ---------- */
+.plans{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:stretch}
+.plan{border:1px solid var(--line);border-radius:18px;padding:34px 32px;
+  display:flex;flex-direction:column}
+.plan.free{background:var(--navy);color:#fff;border-color:var(--navy)}
+.plan .price{font-family:Oxanium,sans-serif;font-weight:800;font-size:2.6rem;
+  letter-spacing:.02em;margin:14px 0 6px}
+.plan ul{list-style:none;margin:20px 0 26px;padding:0;font-size:.94rem}
+.plan li{padding:8px 0 8px 24px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;
+  border-radius:50%;background:var(--red)}
+.plan.free li::before{background:var(--red-soft)}
+.plan.free .sub{color:#B9C7E0}
+.plan .sub{color:var(--slate);font-size:.92rem}
+.plan .foot{margin-top:auto}
+
+/* ---------- terminos ---------- */
+#terminos{background:var(--mist);border-top:1px solid var(--line)}
+.terms{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+.terms h3{margin-bottom:8px;color:var(--navy)}
+.terms p{font-size:.93rem;color:var(--slate);margin:0}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep);color:#8FA6CE;padding:54px 0 46px;font-size:.88rem}
+footer .top{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;
+  padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .brand{width:230px}
+footer .cols{display:flex;gap:56px;margin-left:auto;flex-wrap:wrap}
+footer h3{font-size:.78rem;color:#fff;margin-bottom:12px;letter-spacing:.08em}
+footer a{color:#8FA6CE;text-decoration:none;display:block;padding:3px 0}
+footer a:hover{color:#fff}
+footer .legal{padding-top:24px;display:flex;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;font-size:.82rem}
+
+@media(max-width:1040px){
+  .insts{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:940px){
+  nav .wrap{gap:14px;height:64px;position:relative}
+  nav .brand{width:152px}
+  nav .links{position:absolute;top:100%;left:-28px;right:-28px;margin:0;
+    flex-direction:column;gap:0;padding:4px 28px 12px;background:#fff;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 16px 30px rgba(10,42,102,.09);display:none}
+  nav.open .links{display:flex}
+  nav .links a{padding:14px 2px;border-bottom:1px solid var(--line);
+    color:var(--ink);font-size:1rem}
+  nav .links a:last-child{border-bottom:0}
+  .navtoggle{display:inline-flex;order:3}
+  .navcta{margin-left:auto;order:2;padding:10px 15px}
+  .navcta .lg{display:none} .navcta .sm{display:inline}
+
+  .hero .map{height:auto;width:min(720px,112vw);max-width:none;top:32%}
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .plans,.terms,.insts{grid-template-columns:1fr}
+  ul.eps li{grid-template-columns:48px 1fr;row-gap:4px}
+  ul.eps .desc{grid-column:2}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  nav .links{left:-20px;right:-20px;padding:4px 20px 12px}
+  section{padding:56px 0}
+  .sec-head{margin-bottom:26px}
+
+  .hero{padding:52px 0 62px}
+  .hero p.lead{font-size:1rem}
+  .hero .cta{gap:10px}
+  .hero .cta .btn{flex:1 1 140px;text-align:center}
+  .hero .meta{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;margin-top:26px}
+  .hero .meta b{font-size:1.2rem}
+
+  .tabs{scroll-snap-type:x proximity}
+  .tab{padding:12px 14px;font-size:.74rem;scroll-snap-align:start}
+  .req{padding:13px 14px;font-size:.74rem;gap:8px}
+  .req .host{display:none}
+  .req .status{font-size:.68rem}
+  .res{height:216px;padding:14px;font-size:.73rem}
+  .desc-line{padding:0 14px 14px;min-height:0}
+
+  ul.eps li{padding:15px 2px}
+  ul.eps .path{font-size:.82rem}
+
+  .inst{padding:18px;gap:14px}
+  .inst .sigla{flex:0 0 44px;width:44px}
+
+  .plan{padding:26px 22px;border-radius:15px}
+  .plan .price{font-size:2.2rem}
+
+  footer{padding:44px 0 38px}
+  footer .top{gap:26px}
+  footer .brand{width:186px}
+  footer .cols{margin-left:0;width:100%;display:grid;
+    grid-template-columns:1fr 1fr;gap:26px 20px}
+  footer .legal{flex-direction:column;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero .map .trace{stroke-dashoffset:0}
+  .hero .map .node{opacity:1}
+  .hero .map .packets,.hero .map .halo{display:none}
+}
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">API KEY</span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1"></span><br></p>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 41.6px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">LOS DATOS DE REPÚBLICA DOMINICANA, EN JSON</span></h1>
-<p class="p6"><span class="s2">Cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales. Una sola API, sin scraping y sin portales que se caen.</span></p>
-<p class="p7"><span class="s1">OBTENER API KEY</span></p>
-<p class="p8"><span class="s2">VER ENDPOINTS</span></p>
-<p class="p9"><span class="s2">6</span></p>
-<p class="p10"><span class="s2">endpoints públicos</span></p>
-<p class="p9"><span class="s2">Gratis</span></p>
-<p class="p10"><span class="s2">hasta 10.000 consultas al mes</span></p>
-<p class="p9"><span class="s2">0</span></p>
-<p class="p10"><span class="s2">tarjetas de crédito</span></p>
-<p class="p11"><span class="s1">cedula</span></p>
-<p class="p12"><span class="s3">rnc</span></p>
-<p class="p12"><span class="s3">provincias</span></p>
-<p class="p12"><span class="s3">feriados</span></p>
-<p class="p12"><span class="s3">tasa</span></p>
-<p class="p12"><span class="s3">postal</span></p>
-<p class="p13"><span class="s3">GET</span></p>
-<p class="p14"><span class="s3">https://api.dominicanaapi.com/v1/cedula/001-0000000-0</span></p>
-<p class="p15"><span class="s3">200 · 48 ms</span></p>
-<p class="p16"><span class="s1"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s4">ENDPOINTS</span></h2>
-<p class="p18"><span class="s4">Todo responde JSON sobre HTTPS. Sin SDK: si tu lenguaje sabe hacer una petición, ya puedes usarla.</span></p>
-<ul class="ul1">
-  <li class="li19"><span class="s5"></span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/cedula/{cedula}</span><span class="s9"><br>
-</span><span class="s4">Valida una cédula y devuelve el nombre registrado.</span><span class="s1"><br>
-</span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/rnc/{rnc}</span><span class="s9"><br>
-</span><span class="s4">Consulta un RNC en el registro de la DGII.</span><span class="s1"><br>
-</span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/provincias</span><span class="s9"><br>
-</span><span class="s4">Las 32 provincias con su código, región y municipio cabecera.</span><span class="s1"><br>
-</span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/feriados/2026</span><span class="s9"><br>
-</span><span class="s4">Feriados nacionales del año, con la fecha ya trasladada.</span><span class="s1"><br>
-</span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/tasa-cambio</span><span class="s9"><br>
-</span><span class="s4">Tasa de compra y venta del Banco Central, del día.</span><span class="s1"><br>
-</span><span class="s6">GET</span><span class="s7"><br>
-</span><span class="s8">/v1/codigo-postal/{codigo}</span><span class="s9"><br>
-</span><span class="s4">Resuelve un código postal a municipio y provincia.</span></li>
-</ul>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">DE DÓNDE SALEN LOS DATOS</span></h2>
-<p class="p18"><span class="s1">Cada endpoint tiene una fuente oficial detrás. Consolidamos, normalizamos y servimos: tú no tienes que pelear con seis portales distintos.</span></p>
-<p class="p20"><span class="s10">JCE</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">JCE</span></h3>
-<p class="p22"><span class="s10">Junta Central Electoral</span></p>
-<p class="p23"><span class="s10">Cédulas y estado del registro civil</span></p>
-<p class="p24"><span class="s4">/v1/cedula</span></p>
-<p class="p25"><span class="s10">DGII</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">DGII</span></h3>
-<p class="p22"><span class="s10">Dirección General de Impuestos Internos</span></p>
-<p class="p23"><span class="s10">Registro Nacional del Contribuyente</span></p>
-<p class="p24"><span class="s4">/v1/rnc</span></p>
-<p class="p25"><span class="s10">BCRD</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">BCRD</span></h3>
-<p class="p22"><span class="s10">Banco Central de la República Dominicana</span></p>
-<p class="p23"><span class="s10">Tasa de cambio de referencia</span></p>
-<p class="p24"><span class="s4">/v1/tasa-cambio</span></p>
-<p class="p26"><span class="s10">INPOSDOM</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">INPOSDOM</span></h3>
-<p class="p22"><span class="s10">Instituto Postal Dominicano</span></p>
-<p class="p23"><span class="s10">Códigos postales por municipio</span></p>
-<p class="p24"><span class="s4">/v1/codigo-postal</span></p>
-<p class="p20"><span class="s10">ONE</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">ONE</span></h3>
-<p class="p22"><span class="s10">Oficina Nacional de Estadística</span></p>
-<p class="p23"><span class="s10">División territorial y provincias</span></p>
-<p class="p24"><span class="s4">/v1/provincias</span></p>
-<p class="p20"><span class="s10">MT</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 10.3px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s10">MT</span></h3>
-<p class="p22"><span class="s10">Ministerio de Trabajo</span></p>
-<p class="p23"><span class="s10">Calendario de feriados nacionales</span></p>
-<p class="p24"><span class="s4">/v1/feriados</span></p>
-<p class="p27"><span class="s1">Dominicana API no está afiliada, patrocinada ni respaldada por estas instituciones. Los nombres se muestran únicamente para identificar el origen de cada dato.</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">PLANES</span></h2>
-<p class="p18"><span class="s1">El plan gratuito cubre proyectos personales, pruebas y la mayoría de integraciones pequeñas. Si necesitas más volumen o garantías, lo conversamos.</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s11">GRATIS</span></h3>
-<p class="p29"><span class="s11">RD$0</span></p>
-<p class="p30"><span class="s11">Para siempre, sin tarjeta.</span></p>
-<ul class="ul1">
-  <li class="li31"><span class="s12"></span><span class="s11">10.000 consultas al mes</span></li>
-  <li class="li31"><span class="s12"></span><span class="s11">Los 6 endpoints públicos</span></li>
-  <li class="li31"><span class="s12"></span><span class="s11">Límite de 30 peticiones por minuto</span></li>
-  <li class="li31"><span class="s12"></span><span class="s11">Soporte por la comunidad</span></li>
-</ul>
-<p class="p32"><span class="s10">CREAR MI API KEY</span></p>
-<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s1">A MEDIDA</span></h3>
-<p class="p34"><span class="s1">Hablemos</span></p>
-<p class="p35"><span class="s1">Para producción y volumen alto.</span></p>
-<ul class="ul1">
-  <li class="li36"><span class="s13"></span><span class="s1">Volumen y límites que definas</span></li>
-  <li class="li36"><span class="s13"></span><span class="s1">Acuerdo de nivel de servicio</span></li>
-  <li class="li36"><span class="s13"></span><span class="s1">Endpoints y campos adicionales</span></li>
-  <li class="li36"><span class="s13"></span><span class="s1">Soporte directo y canal privado</span></li>
-</ul>
-<p class="p8"><span class="s11"><a href="mailto:hola@dominicanaapi.com">ESCRIBIRNOS<span class="s14"></span></a></span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.8px 'Helvetica Neue'; color: #0d121c; -webkit-text-stroke: #0d121c"><span class="s4">TÉRMINOS DE USO</span></h2>
-<p class="p18"><span class="s4">Resumen en lenguaje claro. El documento completo está en la documentación.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">DATOS PÚBLICOS</span></h3>
-<p class="p19"><span class="s4">La API expone información que ya es de acceso público. No almacenamos consultas asociadas a tu API key más allá de lo necesario para contar el uso.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">USO RESPONSABLE</span></h3>
-<p class="p19"><span class="s4">Está prohibido usar la API para perfilar personas, revender los datos o reconstruir bases completas. Una API key que lo haga se revoca sin aviso.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #0b1d53; -webkit-text-stroke: #0b1d53"><span class="s4">SIN GARANTÍA</span></h3>
-<p class="p19"><span class="s4">Los datos vienen de fuentes oficiales y pueden estar desactualizados. El plan gratuito se ofrece tal cual; para garantías existe el plan a medida.</span></p>
-<p class="p38"><span class="s1"></span><br></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">PRODUCTO</span></h3>
-<p class="p40"><span class="s2">Endpoints</span></p>
-<p class="p40"><span class="s2">Fuentes de datos</span></p>
-<p class="p40"><span class="s2">Planes</span></p>
-<p class="p40"><span class="s2">Estado del servicio</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">DESARROLLADORES</span></h3>
-<p class="p40"><span class="s2">Documentación</span></p>
-<p class="p40"><span class="s2">Referencia de errores</span></p>
-<p class="p40"><span class="s2">GitHub</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 9.4px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s2">CONTACTO</span></h3>
-<p class="p40"><span class="s2"><a href="mailto:hola@dominicanaapi.com">hola@dominicanaapi.com<span class="s15"></span></a></span></p>
-<p class="p40"><span class="s2">Términos de uso</span></p>
-<p class="p41"><span class="s2">Santo Domingo, República Dominicana</span></p>
-<p class="p41"><span class="s2">© 2026 Dominicana API</span></p>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1031 130" preserveAspectRatio="xMidYMid meet" role="img">
+  
+  <rect x="0" y="0" width="129.72" height="129.72" rx="30.48" fill="#0A2A66"/>
+  <g transform="translate(12.97,30.06) scale(0.5765)"><path d="M13.47 9.54L15.95 4.52Q17.06 2.28 19.54 2.60L38.54 5.04Q41.02 5.36 43.12 4.02L47.30 1.35Q49.41 0.00 51.71 0.97L82.36 13.83Q84.67 14.79 87.16 14.58L98.51 13.62Q101.00 13.40 102.03 15.69L108.77 30.73Q109.80 33.01 112.30 32.98L136.84 32.67Q139.34 32.64 137.93 34.70L136.38 36.96Q134.97 39.03 132.49 38.73L119.64 37.17Q117.16 36.87 117.32 39.36L117.43 41.19Q117.59 43.69 120.06 44.08L157.66 49.98Q160.13 50.37 161.89 52.14L178.24 68.62Q180.00 70.40 178.20 72.13L161.78 87.96Q159.97 89.69 158.39 87.75L152.77 80.87Q151.18 78.94 148.69 78.77L108.19 75.99Q105.69 75.82 103.74 77.38L91.96 86.74Q90.01 88.30 87.52 88.49L73.84 89.52Q71.35 89.70 70.01 87.59L65.29 80.13Q63.95 78.02 61.59 78.84L47.70 83.70Q45.34 84.52 44.31 86.80L30.05 118.45Q29.02 120.73 26.92 119.37L18.28 113.78Q16.19 112.42 16.06 109.92L14.84 86.56Q14.72 84.06 12.95 82.29L1.76 71.06Q0.00 69.29 2.14 67.99L12.04 61.96Q14.18 60.66 12.76 58.61L8.49 52.42Q7.07 50.37 8.93 48.70L16.07 42.30Q17.93 40.63 16.47 38.60L12.88 33.61Q11.43 31.58 11.54 29.08L12.24 14.27Q12.36 11.78 12.36 11.78L12.36 11.78Q12.36 11.78 13.47 9.54Z" fill="#FFFFFF"/>
+    <g fill="none" stroke="#0A2A66" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M66 16 V25 L103 62 V70 H146 L158 58 H162"/></g>
+    <circle cx="66" cy="16" r="4.0" fill="#D3202B"/>
+    <circle cx="162" cy="58" r="4.0" fill="#D3202B"/></g>
+  <g transform="translate(159.72,99.36)"><path d="M9.01 0.00V-69.00H36.02Q60.98 -69.00 60.98 -43.98V-25.02Q60.98 0.00 36.02 0.00ZM17.43 -7.64H36.53Q52.56 -7.64 52.56 -23.71V-45.29Q52.56 -61.36 36.53 -61.36H17.43Z M82.51 -15.32V-53.68Q82.51 -69.00 97.83 -69.00H121.16Q136.48 -69.00 136.48 -53.68V-15.32Q136.48 0.00 121.16 0.00H97.83Q82.51 0.00 82.51 -15.32ZM90.93 -14.38Q90.93 -7.64 97.73 -7.64H121.33Q128.06 -7.64 128.06 -14.38V-54.62Q128.06 -61.36 121.33 -61.36H97.73Q90.93 -61.36 90.93 -54.62Z M160.01 0.00V-69.00H171.08L194.18 -19.99L217.20 -69.00H228.27V0.00H219.85V-56.38L198.11 -10.00H190.17L168.43 -56.38V0.00Z M252.81 0.00V-69.00H261.23V0.00Z M285.71 0.00V-69.00H295.03L331.26 -13.03V-69.00H339.68V0.00H330.39L294.13 -55.97V0.00Z M364.21 0.00V-69.00H372.63V0.00Z M396.11 -15.32V-53.68Q396.11 -69.00 411.43 -69.00H439.61L444.13 -65.50V-61.36H411.33Q404.53 -61.36 404.53 -54.62V-14.38Q404.53 -7.64 411.33 -7.64H444.13V-3.50L439.61 0.00H411.43Q396.11 0.00 396.11 -15.32Z M457.59 -1.85 480.22 -69.00H494.03L516.59 -1.85L515.42 0.00H508.45L502.77 -17.36H471.41L465.73 0.00H458.83ZM473.94 -25.00H500.31L488.33 -61.36H485.92Z M534.11 0.00V-69.00H543.43L579.66 -13.03V-69.00H588.08V0.00H578.79L542.53 -55.97V0.00Z M605.59 -1.85 628.22 -69.00H642.03L664.59 -1.85L663.42 0.00H656.45L650.77 -17.36H619.41L613.73 0.00H606.83ZM621.94 -25.00H648.31L636.33 -61.36H633.92Z" fill="#0A2A66"/></g>
+  <g transform="translate(852.32,99.36)"><path d="M1.70 -3.20 21.20 -69.00H47.20L66.70 -3.20L64.60 0.00H50.00L46.60 -12.30H21.80L18.40 0.00H3.80ZM26.40 -28.00H42.00L34.80 -53.30H33.60Z M82.70 0.00V-69.00H116.70Q134.30 -69.00 134.30 -51.40V-37.80Q134.30 -20.30 116.70 -20.30H100.10V0.00ZM100.10 -36.00H115.80Q116.90 -36.00 116.90 -37.10V-52.20Q116.90 -53.30 115.80 -53.30H100.10Z M153.40 0.00V-69.00H170.80V0.00Z" fill="#0A2A66"/></g>
+</svg></div>
+    <div class="links" id="navlinks">
+      <a href="#endpoints">Endpoints</a>
+      <a href="#fuentes">Fuentes</a>
+      <a href="#planes">Planes</a>
+      <a href="#terminos">Términos</a>
+      <a href="#docs">Documentación</a>
+    </div>
+    <a class="btn btn-solid navcta" href="#planes">
+      <span class="lg">Obtener API key</span><span class="sm">API key</span></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false"
+            aria-controls="navlinks" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="currentColor" stroke-width="2"
+        stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></g></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="map" viewBox="-3 -3 186 127" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <path class="land" d="M13.47 9.54L15.95 4.52Q17.06 2.28 19.54 2.60L38.54 5.04Q41.02 5.36 43.12 4.02L47.30 1.35Q49.41 0.00 51.71 0.97L82.36 13.83Q84.67 14.79 87.16 14.58L98.51 13.62Q101.00 13.40 102.03 15.69L108.77 30.73Q109.80 33.01 112.30 32.98L136.84 32.67Q139.34 32.64 137.93 34.70L136.38 36.96Q134.97 39.03 132.49 38.73L119.64 37.17Q117.16 36.87 117.32 39.36L117.43 41.19Q117.59 43.69 120.06 44.08L157.66 49.98Q160.13 50.37 161.89 52.14L178.24 68.62Q180.00 70.40 178.20 72.13L161.78 87.96Q159.97 89.69 158.39 87.75L152.77 80.87Q151.18 78.94 148.69 78.77L108.19 75.99Q105.69 75.82 103.74 77.38L91.96 86.74Q90.01 88.30 87.52 88.49L73.84 89.52Q71.35 89.70 70.01 87.59L65.29 80.13Q63.95 78.02 61.59 78.84L47.70 83.70Q45.34 84.52 44.31 86.80L30.05 118.45Q29.02 120.73 26.92 119.37L18.28 113.78Q16.19 112.42 16.06 109.92L14.84 86.56Q14.72 84.06 12.95 82.29L1.76 71.06Q0.00 69.29 2.14 67.99L12.04 61.96Q14.18 60.66 12.76 58.61L8.49 52.42Q7.07 50.37 8.93 48.70L16.07 42.30Q17.93 40.63 16.47 38.60L12.88 33.61Q11.43 31.58 11.54 29.08L12.24 14.27Q12.36 11.78 12.36 11.78L12.36 11.78Q12.36 11.78 13.47 9.54Z"/>
+    <path class="trace" d="M66 16 V25 L103 62 V70 H146 L158 58 H162"/>
+    <path class="trace" d="M74 33 L56 51 V72 L50 78" style="animation-delay:1s"/>
+    <g class="pulse">
+      <circle class="halo" cx="66" cy="16" r="3.4" style="animation-delay:2.6s"/>
+      <circle class="halo" cx="103" cy="70" r="3.4" style="animation-delay:3.3s"/>
+      <circle class="halo" cx="162" cy="58" r="3.4" style="animation-delay:3.0s"/>
+      <circle class="halo" cx="50" cy="78" r="3.4" style="animation-delay:3.7s"/>
+    </g>
+    <circle class="node" cx="66" cy="16" r="3.4" style="animation-delay:2.2s"/>
+    <circle class="node" cx="103" cy="70" r="3.4" style="animation-delay:2.4s"/>
+    <circle class="node" cx="162" cy="58" r="3.4" style="animation-delay:2.6s"/>
+    <circle class="node" cx="50" cy="78" r="3.4" style="animation-delay:2.8s"/>
+    <g class="packets">
+      <circle class="packet" r="1.9">
+        <animateMotion dur="4.2s" begin="2.8s" repeatCount="indefinite"
+          keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M66 16 V25 L103 62 V70 H146 L158 58 H162"/>
+        <animate attributeName="opacity" dur="4.2s" begin="2.8s" repeatCount="indefinite"
+          values="0;.95;.95;0" keyTimes="0;.08;.9;1"/>
+      </circle>
+      <circle class="packet" r="1.6">
+        <animateMotion dur="5.6s" begin="3.9s" repeatCount="indefinite"
+          keyPoints="0;1" keyTimes="0;1" calcMode="linear" path="M74 33 L56 51 V72 L50 78"/>
+        <animate attributeName="opacity" dur="5.6s" begin="3.9s" repeatCount="indefinite"
+          values="0;.85;.85;0" keyTimes="0;.1;.88;1"/>
+      </circle>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Los datos de República Dominicana, en JSON</h1>
+        <p class="lead">Cédulas, RNC, provincias, feriados, tasa de cambio y códigos postales.
+          Una sola API, sin scraping y sin portales que se caen.</p>
+        <div class="cta">
+          <a class="btn btn-light" href="#planes">Obtener API key</a>
+          <a class="btn btn-ghost" href="#endpoints">Ver endpoints</a>
+        </div>
+        <div class="meta">
+          <div><b>6</b>endpoints públicos</div>
+          <div><b>Gratis</b>hasta 10.000 consultas al mes</div>
+          <div><b>0</b>tarjetas de crédito</div>
+        </div>
+      </div>
+
+      <div class="console" id="console">
+        <div class="tabs" role="tablist">
+        <button class="tab on" data-i="0" role="tab" aria-selected="true">cedula</button>
+        <button class="tab" data-i="1" role="tab" aria-selected="false">rnc</button>
+        <button class="tab" data-i="2" role="tab" aria-selected="false">provincias</button>
+        <button class="tab" data-i="3" role="tab" aria-selected="false">feriados</button>
+        <button class="tab" data-i="4" role="tab" aria-selected="false">tasa</button>
+        <button class="tab" data-i="5" role="tab" aria-selected="false">postal</button>
+        </div>
+        <div class="req">
+          <span class="verb">GET</span>
+          <span class="url" id="url">https://api.dominicanaapi.com/v1/jce/cedula/001-0000000-0</span>
+          <span class="status" id="status">200 · 48 ms</span>
+        </div>
+        <pre class="res" id="res"></pre>
+        <div class="desc-line" id="desc"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="endpoints">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Endpoints</h2>
+      <p>Cada ruta lleva la institución de origen en el segundo segmento, así sabes de dónde viene el dato sin abrir la documentación. Todo responde JSON sobre HTTPS y sin SDK: si tu lenguaje sabe hacer una petición, ya puedes usarla.</p>
+    </div>
+    <ul class="eps">
+      <li><code class="verb">GET</code><code class="path">/v1/jce/cedula/{cedula}</code><span class="desc">Valida una cédula y devuelve el nombre registrado.</span></li>
+      <li><code class="verb">GET</code><code class="path">/v1/dgii/rnc/{rnc}</code><span class="desc">Consulta un RNC en el registro de la DGII.</span></li>
+      <li><code class="verb">GET</code><code class="path">/v1/one/provincias</code><span class="desc">Las 32 provincias con su código, región y municipio cabecera.</span></li>
+      <li><code class="verb">GET</code><code class="path">/v1/mt/feriados/2026</code><span class="desc">Feriados nacionales del año, con la fecha ya trasladada.</span></li>
+      <li><code class="verb">GET</code><code class="path">/v1/bcrd/tasa-cambio</code><span class="desc">Tasa de compra y venta del Banco Central, del día.</span></li>
+      <li><code class="verb">GET</code><code class="path">/v1/inposdom/codigo-postal/{codigo}</code><span class="desc">Resuelve un código postal a municipio y provincia.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>De dónde salen los datos</h2>
+      <p>Cada endpoint tiene una fuente oficial detrás. Consolidamos, normalizamos y servimos:
+         tú no tienes que pelear con seis portales distintos.</p>
+    </div>
+    <div class="insts">
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="30" letter-spacing="1">JCE</text></svg></div><div><h3>JCE</h3><p class="nom">Junta Central Electoral</p><p class="dato">Cédulas y estado del registro civil</p><code>/v1/jce/cedula</code></div></article>
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="23" letter-spacing="1">DGII</text></svg></div><div><h3>DGII</h3><p class="nom">Dirección General de Impuestos Internos</p><p class="dato">Registro Nacional del Contribuyente</p><code>/v1/dgii/rnc</code></div></article>
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="23" letter-spacing="1">BCRD</text></svg></div><div><h3>BCRD</h3><p class="nom">Banco Central de la República Dominicana</p><p class="dato">Tasa de cambio de referencia</p><code>/v1/bcrd/tasa-cambio</code></div></article>
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="13" letter-spacing="1">INPOSDOM</text></svg></div><div><h3>INPOSDOM</h3><p class="nom">Instituto Postal Dominicano</p><p class="dato">Códigos postales por municipio</p><code>/v1/inposdom/codigo-postal</code></div></article>
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="30" letter-spacing="1">ONE</text></svg></div><div><h3>ONE</h3><p class="nom">Oficina Nacional de Estadística</p><p class="dato">División territorial y provincias</p><code>/v1/one/provincias</code></div></article>
+      <article class="inst"><div class="sigla"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" rx="23" fill="#0A2A66"/><text x="48" y="48" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF" font-family="Oxanium,sans-serif" font-weight="800" font-size="30" letter-spacing="1">MT</text></svg></div><div><h3>MT</h3><p class="nom">Ministerio de Trabajo</p><p class="dato">Calendario de feriados nacionales</p><code>/v1/mt/feriados</code></div></article>
+    </div>
+    <p class="disclaimer">Dominicana API no está afiliada, patrocinada ni respaldada por estas
+       instituciones. Los nombres se muestran únicamente para identificar el origen de cada dato.</p>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Planes</h2>
+      <p>El plan gratuito cubre proyectos personales, pruebas y la mayoría de integraciones pequeñas.
+         Si necesitas más volumen o garantías, lo conversamos.</p>
+    </div>
+    <div class="plans">
+      <div class="plan free">
+        <h3>Gratis</h3>
+        <div class="price">RD$0</div>
+        <div class="sub">Para siempre, sin tarjeta.</div>
+        <ul>
+          <li>10.000 consultas al mes</li>
+          <li>Los 6 endpoints públicos</li>
+          <li>Límite de 30 peticiones por minuto</li>
+          <li>Soporte por la comunidad</li>
+        </ul>
+        <div class="foot"><a class="btn btn-light" href="#docs">Crear mi API key</a></div>
+      </div>
+      <div class="plan">
+        <h3>A medida</h3>
+        <div class="price">Hablemos</div>
+        <div class="sub">Para producción y volumen alto.</div>
+        <ul>
+          <li>Volumen y límites que definas</li>
+          <li>Acuerdo de nivel de servicio</li>
+          <li>Endpoints y campos adicionales</li>
+          <li>Soporte directo y canal privado</li>
+        </ul>
+        <div class="foot"><a class="btn btn-solid" href="mailto:hola@dominicanaapi.com">Escribirnos</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terminos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Términos de uso</h2>
+      <p>Resumen en lenguaje claro. El documento completo está en la documentación.</p>
+    </div>
+    <div class="terms">
+      <div>
+        <h3>Datos públicos</h3>
+        <p>La API expone información que ya es de acceso público. No almacenamos consultas
+           asociadas a tu API key más allá de lo necesario para contar el uso.</p>
+      </div>
+      <div>
+        <h3>Uso responsable</h3>
+        <p>Está prohibido usar la API para perfilar personas, revender los datos o
+           reconstruir bases completas. Una API key que lo haga se revoca sin aviso.</p>
+      </div>
+      <div>
+        <h3>Sin garantía</h3>
+        <p>Los datos vienen de fuentes oficiales y pueden estar desactualizados.
+           El plan gratuito se ofrece tal cual; para garantías existe el plan a medida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="docs">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1039 130" preserveAspectRatio="xMidYMid meet" role="img">
+  
+  <rect x="0" y="0" width="129.72" height="129.72" rx="30.48" fill="#FFFFFF"/>
+  <g transform="translate(12.97,30.06) scale(0.5765)"><path d="M13.47 9.54L15.95 4.52Q17.06 2.28 19.54 2.60L38.54 5.04Q41.02 5.36 43.12 4.02L47.30 1.35Q49.41 0.00 51.71 0.97L82.36 13.83Q84.67 14.79 87.16 14.58L98.51 13.62Q101.00 13.40 102.03 15.69L108.77 30.73Q109.80 33.01 112.30 32.98L136.84 32.67Q139.34 32.64 137.93 34.70L136.38 36.96Q134.97 39.03 132.49 38.73L119.64 37.17Q117.16 36.87 117.32 39.36L117.43 41.19Q117.59 43.69 120.06 44.08L157.66 49.98Q160.13 50.37 161.89 52.14L178.24 68.62Q180.00 70.40 178.20 72.13L161.78 87.96Q159.97 89.69 158.39 87.75L152.77 80.87Q151.18 78.94 148.69 78.77L108.19 75.99Q105.69 75.82 103.74 77.38L91.96 86.74Q90.01 88.30 87.52 88.49L73.84 89.52Q71.35 89.70 70.01 87.59L65.29 80.13Q63.95 78.02 61.59 78.84L47.70 83.70Q45.34 84.52 44.31 86.80L30.05 118.45Q29.02 120.73 26.92 119.37L18.28 113.78Q16.19 112.42 16.06 109.92L14.84 86.56Q14.72 84.06 12.95 82.29L1.76 71.06Q0.00 69.29 2.14 67.99L12.04 61.96Q14.18 60.66 12.76 58.61L8.49 52.42Q7.07 50.37 8.93 48.70L16.07 42.30Q17.93 40.63 16.47 38.60L12.88 33.61Q11.43 31.58 11.54 29.08L12.24 14.27Q12.36 11.78 12.36 11.78L12.36 11.78Q12.36 11.78 13.47 9.54Z" fill="#0A2A66"/>
+    <g fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M66 16 V25 L103 62 V70 H146 L158 58 H162"/></g>
+    <circle cx="66" cy="16" r="4.0" fill="#0A2A66"/>
+    <circle cx="162" cy="58" r="4.0" fill="#0A2A66"/></g>
+  <g transform="translate(159.72,99.36)"><path d="M8.78 0.00V-69.00H35.55Q61.45 -69.00 61.45 -43.04V-25.96Q61.45 0.00 35.55 0.00ZM18.95 -9.22H36.15Q51.28 -9.22 51.28 -24.39V-44.61Q51.28 -59.78 36.15 -59.78H18.95Z M82.48 -15.76V-53.24Q82.48 -69.00 98.24 -69.00H121.39Q137.15 -69.00 137.15 -53.24V-15.76Q137.15 0.00 121.39 0.00H98.24Q82.48 0.00 82.48 -15.76ZM92.65 -14.85Q92.65 -9.22 98.34 -9.22H121.35Q126.98 -9.22 126.98 -14.85V-54.15Q126.98 -59.78 121.35 -59.78H98.34Q92.65 -59.78 92.65 -54.15Z M160.18 0.00V-69.00H173.03L195.05 -22.22L217.01 -69.00H229.87V0.00H219.70V-52.63L199.58 -9.70H190.46L170.35 -52.63V0.00Z M253.88 0.00V-69.00H264.05V0.00Z M288.08 0.00V-69.00H299.24L332.87 -16.15V-69.00H343.04V0.00H331.92L298.25 -52.85V0.00Z M367.08 0.00V-69.00H377.25V0.00Z M400.28 -15.76V-53.24Q400.28 -69.00 416.04 -69.00H443.78L448.94 -65.01V-59.78H416.14Q410.45 -59.78 410.45 -54.15V-14.85Q410.45 -9.22 416.14 -9.22H448.94V-3.99L443.78 0.00H416.04Q400.28 0.00 400.28 -15.76Z M462.33 -2.11 484.35 -69.00H500.54L522.51 -2.11L521.16 0.00H512.70L507.46 -16.37H477.38L472.14 0.00H463.74ZM480.32 -25.59H504.58L493.54 -59.78H491.36Z M539.68 0.00V-69.00H550.84L584.47 -16.15V-69.00H594.64V0.00H583.52L549.85 -52.85V0.00Z M611.83 -2.11 633.85 -69.00H650.04L672.01 -2.11L670.66 0.00H662.20L656.96 -16.37H626.88L621.64 0.00H613.24ZM629.82 -25.59H654.08L643.04 -59.78H640.86Z" fill="#FFFFFF"/></g>
+  <g transform="translate(859.62,99.36)"><path d="M1.70 -3.20 21.20 -69.00H47.20L66.70 -3.20L64.60 0.00H50.00L46.60 -12.30H21.80L18.40 0.00H3.80ZM26.40 -28.00H42.00L34.80 -53.30H33.60Z M82.70 0.00V-69.00H116.70Q134.30 -69.00 134.30 -51.40V-37.80Q134.30 -20.30 116.70 -20.30H100.10V0.00ZM100.10 -36.00H115.80Q116.90 -36.00 116.90 -37.10V-52.20Q116.90 -53.30 115.80 -53.30H100.10Z M153.40 0.00V-69.00H170.80V0.00Z" fill="#FFFFFF"/></g>
+</svg></div>
+      <div class="cols">
+        <div>
+          <h3>Producto</h3>
+          <a href="#endpoints">Endpoints</a>
+          <a href="#fuentes">Fuentes de datos</a>
+          <a href="#planes">Planes</a>
+          <a href="#">Estado del servicio</a>
+        </div>
+        <div>
+          <h3>Desarrolladores</h3>
+          <a href="#">Documentación</a>
+          <a href="#">Referencia de errores</a>
+          <a href="#">GitHub</a>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <a href="mailto:hola@dominicanaapi.com">hola@dominicanaapi.com</a>
+          <a href="#terminos">Términos de uso</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Santo Domingo, República Dominicana</span>
+      <span>© 2026 Dominicana API</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const EP = [{"path": "/v1/jce/cedula/{cedula}", "desc": "Valida una cédula y devuelve el nombre registrado.", "res": "{\n  \"cedula\": \"001-0000000-0\",\n  \"valida\": true,\n  \"nombre\": \"NOMBRE APELLIDO APELLIDO\",\n  \"estado\": \"ACTIVA\"\n}"}, {"path": "/v1/dgii/rnc/{rnc}", "desc": "Consulta un RNC en el registro de la DGII.", "res": "{\n  \"rnc\": \"130000000\",\n  \"razon_social\": \"EMPRESA EJEMPLO SRL\",\n  \"nombre_comercial\": \"EJEMPLO\",\n  \"estado\": \"ACTIVO\",\n  \"regimen\": \"NORMAL\"\n}"}, {"path": "/v1/one/provincias", "desc": "Las 32 provincias con su código, región y municipio cabecera.", "res": "[\n  {\n    \"codigo\": \"01\",\n    \"nombre\": \"Distrito Nacional\",\n    \"region\": \"Ozama\",\n    \"cabecera\": \"Santo Domingo de Guzmán\"\n  },\n  {\n    \"codigo\": \"02\",\n    \"nombre\": \"Azua\",\n    \"region\": \"Valdesia\",\n    \"cabecera\": \"Azua de Compostela\"\n  }\n]"}, {"path": "/v1/mt/feriados/2026", "desc": "Feriados nacionales del año, con la fecha ya trasladada.", "res": "[\n  {\n    \"fecha\": \"2026-01-01\",\n    \"nombre\": \"Año Nuevo\",\n    \"trasladable\": false\n  },\n  {\n    \"fecha\": \"2026-01-26\",\n    \"nombre\": \"Día de Duarte\",\n    \"trasladable\": true,\n    \"fecha_original\": \"2026-01-26\"\n  }\n]"}, {"path": "/v1/bcrd/tasa-cambio", "desc": "Tasa de compra y venta del Banco Central, del día.", "res": "{\n  \"fecha\": \"2026-09-13\",\n  \"moneda\": \"USD\",\n  \"compra\": 60.85,\n  \"venta\": 61.42,\n  \"fuente\": \"Banco Central de la República Dominicana\"\n}"}, {"path": "/v1/inposdom/codigo-postal/{codigo}", "desc": "Resuelve un código postal a municipio y provincia.", "res": "{\n  \"codigo_postal\": \"10101\",\n  \"municipio\": \"Santo Domingo de Guzmán\",\n  \"provincia\": \"Distrito Nacional\",\n  \"region\": \"Ozama\"\n}"}];
+const resEl = document.getElementById('res');
+const urlEl = document.getElementById('url');
+const descEl = document.getElementById('desc');
+const statusEl = document.getElementById('status');
+const BASE = 'https://api.dominicanaapi.com';
+
+function paint(json){
+  return json
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/"([^"]+)":/g,'<span class="k">"$1"</span>:')
+    .replace(/: "([^"]*)"/g,': <span class="s">"$1"</span>')
+    .replace(/: (-?\d+\.?\d*)/g,': <span class="n">$1</span>')
+    .replace(/: (true|false|null)/g,': <span class="b">$1</span>');
+}
+
+function show(i){
+  const e = EP[i];
+  urlEl.innerHTML = '<span class="host">' + BASE + '</span>' + e.path;
+  descEl.textContent = e.desc;
+  statusEl.textContent = '200 · ' + (28 + i * 7) + ' ms';
+  resEl.innerHTML = paint(e.res);
+}
+
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => {
+      x.classList.remove('on'); x.setAttribute('aria-selected','false');
+    });
+    t.classList.add('on'); t.setAttribute('aria-selected','true');
+    show(+t.dataset.i);
+  });
+});
+show(0);
+
+const nav = document.getElementById('nav');
+const navtoggle = document.getElementById('navtoggle');
+navtoggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  navtoggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navtoggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+});
+document.querySelectorAll('#navlinks a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  navtoggle.setAttribute('aria-expanded', 'false');
+}));
+</script>
+
 </body>
 </html>
